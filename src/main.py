@@ -8,7 +8,7 @@ from tkinter.filedialog import askdirectory
 VER = "1.2.4"   # default-version-value 
 Font = ("Gaborila", 14)
 canvas = tk.Tk()
-canvas.title(f"Rock-Music: {VER}")
+canvas.title(f"Py-Music-Player: {VER}")
 canvas.geometry('550x450')     # default-Dimension: 550x600
 canvas.resizable(0, 0)  # not resizable  # type: ignore
 canvas.config(bg="black")

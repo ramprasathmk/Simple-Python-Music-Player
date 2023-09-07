@@ -1,6 +1,5 @@
 from tkinter import Label, Frame 
-from tkinter import PhotoImage, Button 
-from tkinter import Listbox 
+from tkinter import PhotoImage, Button, Listbox 
 import fnmatch 
 import os 
 from pygame import mixer 

@@ -1,4 +1,4 @@
-from tkinter import Tk , Label, Frame 
+from tkinter import Label, Frame 
 from tkinter import PhotoImage, Button 
 from tkinter import Listbox 
 import fnmatch
@@ -6,10 +6,12 @@ import os
 from pygame import mixer 
 from tkinter.filedialog import askdirectory
 
+from src import GUIwindow
+from __init__ import *
+
 
 VER = "1.2.4"   # default-version-value 
 Font = ("Gaborila", 14)
-GUIwindow = Tk()
 GUIwindow.title(f"Py-Music-Player: {VER}")
 GUIwindow.geometry('550x450')     # default-Dimension: 550x600
 GUIwindow.resizable(0, 0)  # not resizable  # type: ignore

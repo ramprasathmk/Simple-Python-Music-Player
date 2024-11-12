@@ -1,32 +1,31 @@
-from tkinter import Label, Frame 
-from tkinter import PhotoImage, Button, Listbox 
-import fnmatch 
-import os 
-from pygame import mixer 
-from tkinter.filedialog import askdirectory 
-
-from src import GUIwindow
-from __init__ import *
+from tkinter import Label, Frame, Button, Listbox, Tk, PhotoImage
+import fnmatch
+from os import walk
+from pygame import mixer
+from tkinter.filedialog import askdirectory
 
 
-VER = "1.2.4"   # default-version-value 
-Font = ("Gaborila", 14)
-GUIwindow.title(f"Py-Music-Player: {VER}")
-GUIwindow.geometry('550x450')     # default-Dimension: 550x600
-GUIwindow.resizable(0, 0)  # not resizable  # type: ignore
-GUIwindow.config(bg="black")
+VER = "1.2.4"   # default-version-value
+Font = ("SourceCodePro-Medium", 14)  # use your own font to get better interface experience
+GUI_Window = Tk()
+GUI_Window.title(f"Simple Python Music Player v{VER}")
+# default-Dimension: 550x600
+GUI_Window.geometry('550x450')
+# not resizable
+GUI_Window.resizable(0, 0)  # type: ignore
+GUI_Window.config(bg="black")
 
 rootpath = askdirectory()  #  Select the Folder
-pattern = "*.mp3" 
+pattern = "*.mp3"
 
 mixer.init()
 
 
-prev_img= PhotoImage(file='./img/prev_img.png')
-stop_img= PhotoImage(file='./img/stop_img.png')
-play_img= PhotoImage(file='./img/play_img.png')
-pause_img= PhotoImage(file='./img/pause_img.png')
-next_img= PhotoImage(file='./img/next_img.png')
+prev_img = PhotoImage(file="prev_img.png")
+stop_img = PhotoImage(file="stop_img.png")
+play_img = PhotoImage(file="play_img.png")
+paus_img = PhotoImage(file="pause_img.png")
+next_img = PhotoImage(file="next_img.png")
 
 
 def select():
@@ -77,44 +76,44 @@ def pause_song():
         PauseButton['text'] = "Pause"
 
 
-listBox = Listbox(GUIwindow, fg="red", bg="black", width=100, font=Font)
+listBox = Listbox(GUI_Window, fg="red", bg="black", width=100, font=Font)
 listBox.pack(padx=15, pady=15)
 
 
-label = Label(GUIwindow, text="", bg="black", fg="yellow", font=Font)
+label = Label(GUI_Window, text="", bg="black", fg="yellow", font=Font)
 label.pack(pady=15)
 
 
-top = Frame(GUIwindow, bg="black")
+top = Frame(GUI_Window, bg="black")
 top.pack(padx=10, pady=5, anchor='center')
 
 
-prevButton = Button(GUIwindow, text="Prev", image=prev_img, bg="black", borderwidth=0, command=play_prev)
+prevButton = Button(GUI_Window, text="Prev", image=prev_img, bg="black", borderwidth=0, command=play_prev)
 prevButton.pack(pady=15, in_ = top, side='left')
 
 
-StopButton = Button(GUIwindow, text="Stop", image=stop_img, bg="black", borderwidth=0, command=stop)
-StopButton.pack(pady=15, in_ = top, side='left') 
+StopButton = Button(GUI_Window, text="Stop", image=stop_img, bg="black", borderwidth=0, command=stop)
+StopButton.pack(pady=15, in_ = top, side='left')
 
 
-PlayButton = Button(GUIwindow, text="Play", image=play_img, bg="black", borderwidth=0, command=select)
-PlayButton.pack(pady=15, in_ = top, side='left') 
+PlayButton = Button(GUI_Window, text="Play", image=play_img, bg="black", borderwidth=0, command=select)
+PlayButton.pack(pady=15, in_ = top, side='left')
 
 
-PauseButton = Button(GUIwindow, text="Pause", image=pause_img, bg="black", borderwidth=0, command=pause_song)
-PauseButton.pack(pady=15, in_ = top, side='left') 
+PauseButton = Button(GUI_Window, text="Pause", image=paus_img, bg="black", borderwidth=0, command=pause_song)
+PauseButton.pack(pady=15, in_ = top, side='left')
 
 
-NextButton = Button(GUIwindow, text="Next", image=next_img, bg="black", borderwidth=0, command=play_next)
-NextButton.pack(pady=15, in_ = top, side='left') 
+NextButton = Button(GUI_Window, text="Next", image=next_img, bg="black", borderwidth=0, command=play_next)
+NextButton.pack(pady=15, in_ = top, side='left')
 
 
 def main():
-    for root, dirs, files in os.walk(rootpath):
+    for root, dirs, files in walk(rootpath):
         for filename in fnmatch.filter(files, pattern):
                 listBox.insert('end', filename)
-    
-    GUIwindow.mainloop() 
+
+    GUI_Window.mainloop()
 
 
 if __name__ == '__main__':

@@ -1,21 +1,20 @@
-# Py-Music-Player
+# Simple Python Music Player
 
-### This is fun project build on __`Python`__ programming language.
+This is fun project build on **Python** programming language. This project is fully written in python.
 
-### Steps to run the `Py-Music-Player` application.
-#### Step 1:
-- #### The first screenshot shows the program with the _`Text Editor`_. [Click Here!](./screenshots/Screenshot1.png) 
+## Steps to run the `Py-Music-Player` application.
+- **Step 1:** main.py code
+  
+  ![Click Here!](./screenshots/Screenshot1.png) 
 
-#### Step 2:
+- **Step 2:** Then Choose the Folder containing `*.mp3` files.
 
-- #### Then Choose the Folder containing `*.mp3` files. [Click Here!](./screenshots/Screenshot2.png)
+  ![Click Here!](./screenshots/Screenshot2.png)
 
-#### Step 3:
-- #### Finally you will see the `Music-Player` app __UI__. [Click here!](./screenshots/Screenshot3.png)
+- **Step 3:** Select the song, then click the `Play` button to play the song.
+  
+  ![Click here!](./screenshots/Screenshot3.png)
 
 
-## Description: 
-#### This project is fully written in python.
-
-## Conclusion: 
-#### If any corrections needed anyone can modify this repository.
+## Contributing
+Feel free to modify this template to better suit your project’s specific needs. If you need further customization or have any questions, let me know!

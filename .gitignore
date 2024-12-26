@@ -1,3 +1,23 @@
-.vscode/
-.idea/
+# Ignore specific files
+.env
+
+# Ignore workspace files and folders
+.git
+
+# Ignore IDE files and folders
+.idea
+.vscode
+
+# Ignore python caches
 __pycache__
+__pycache__/*
+
+# Ignore python environments
+.venv
+.venv/*
+.conda
+.conda/*
+
+# Ignore python sensitive files
+*.pyo
+*.pyd

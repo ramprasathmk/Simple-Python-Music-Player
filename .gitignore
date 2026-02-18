@@ -9,15 +9,19 @@
 .vscode
 
 # Ignore python caches
-__pycache__
-__pycache__/*
+__pycache__/
 
 # Ignore python environments
-.venv
-.venv/*
-.conda
-.conda/*
+.venv/
+.conda/
 
 # Ignore python sensitive files
 *.pyo
 *.pyd
+*.pyi
+
+# Ignore Executable Files
+*.exe
+
+# Ignore Containers
+.devcontainer
